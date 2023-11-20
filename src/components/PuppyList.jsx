@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const PuppyList = () => {
+const PuppyList = ({setSinglePuppySelected, setSinglePuppyUrl}) => {
 	const [listOfPuppies, setListOfPuppies] = useState([]);
 
 	useEffect(() => {
@@ -20,7 +20,11 @@ const PuppyList = () => {
 			<section>
 				{listOfPuppies.map((singlePup) => {
 					return (
-						<div className="card">
+						<div className="card" key={singlePup.id} onClick={() => {
+							setSinglePuppySelected(true);
+							setSinglePuppyUrl(`https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-FT-SF/players/${singlePup.id}`)
+						}
+						}>
 							<h3>{singlePup.name}</h3>
 							<img className="card-image" src={singlePup.imageUrl} alt={singlePup.name}></img>
 							<p>{singlePup.name} is a {singlePup.breed}</p>
