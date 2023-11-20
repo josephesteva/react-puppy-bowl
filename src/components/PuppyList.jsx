@@ -20,7 +20,11 @@ const PuppyList = () => {
 			<section>
 				{listOfPuppies.map((singlePup) => {
 					return (
-						<div className="card">{singlePup.name}</div>
+						<div className="card">
+							<h3>{singlePup.name}</h3>
+							<img className="card-image" src={singlePup.imageUrl} alt={singlePup.name}></img>
+							<p>{singlePup.name} is a {singlePup.breed}</p>
+						</div>
 					)
 				})}
 			</section>
