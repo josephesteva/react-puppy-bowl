@@ -17,11 +17,13 @@ const PuppyList = () => {
 		<>
 			<h2>Puppy List</h2>
 			{console.log(listOfPuppies)}
-			{listOfPuppies.map((singlePup) => {
-				return (
-					<li>{singlePup.name}</li>
-				)
-			})}
+			<section>
+				{listOfPuppies.map((singlePup) => {
+					return (
+						<div className="card">{singlePup.name}</div>
+					)
+				})}
+			</section>
 		</>
 	)
 }
