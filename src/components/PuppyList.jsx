@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const PuppyList = ({setSinglePuppySelected, setSinglePuppyUrl}) => {
-	const [listOfPuppies, setListOfPuppies] = useState([]);
+const PuppyList = ({listOfPuppies, setListOfPuppies, setSinglePuppySelected, setSinglePuppyUrl}) => {
 
 	useEffect(() => {
 		const fetchPuppies = async () => {
